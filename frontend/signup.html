@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="form">
+      <h1>Please Register</h1>
+      <div class="err-msg-container">
+        <h3 class="errMsg"></h3>
+        <a href="login.html" class="err-msg-link"></a>
+      </div>
+
+      <form action="" class="signup-form">
+        <div class="form-control">
+          <label>Full Name</label>
+          <input class="input-password-confirm" name="name" type="text" />
+        </div>
+        <div class="form-control">
+          <label>Email</label>
+          <input
+            class="input-signup-email"
+            name="email"
+            type="email"
+            required
+          />
+        </div>
+        <div class="form-control">
+          <label>Phone Number</label>
+          <input class="input-phone" type="number" name="phone" required />
+        </div>
+        <div class="form-control">
+          <label>Password</label>
+          <input
+            class="input-signup-password"
+            name="password"
+            type="password"
+            required
+          />
+        </div>
+
+        <button type="submit" class="btn btn-signup">Register</button>
+      </form>
+      <p style="margin-top: 15px; font-size: 20px">
+        Already have an account? <a href="login.html">Login</a>
+      </p>
+    </div>
+
+    <script src="signup.js"></script>
+  </body>
+</html>
