@@ -20,8 +20,6 @@ async function getUser() {
     name.textContent = jsonData.data.name;
     welcomeName.textContent = jsonData.data.name;
     phone.textContent = jsonData.data.phone;
-
-    console.log(jsonData);
   } catch (error) {
     console.log(error);
   }

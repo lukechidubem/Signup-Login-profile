@@ -16,7 +16,7 @@ const UserSchema = new mongoose.Schema({
 
   phone: String,
 
-  gender: String,
+  // gender: String,
 
   createdAt: {
     type: mongoose.SchemaTypes.Date,

@@ -28,7 +28,6 @@ const handleSignup = async (e) => {
     });
 
     const jsonResponse = await res.json();
-    console.log(jsonResponse);
     if (jsonResponse.status) {
       errMessage.textContent = `${jsonResponse.message},`;
       errMessageLink.textContent = "Click me to login";
@@ -51,4 +50,4 @@ const handleSignup = async (e) => {
   }
 };
 
-signupForm.addEventListener("submit", handleSignup);
+// signupForm.addEventListener("submit", handleSignup);

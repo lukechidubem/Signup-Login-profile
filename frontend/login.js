@@ -23,7 +23,6 @@ const loginHandler = async (e) => {
     const jsonResponse = await res.json();
 
     if (jsonResponse.status) {
-      console.log(jsonResponse);
       // saving the token
       localStorage.setItem("token", jsonResponse.token);
       errMessage.textContent = "Logging in...";

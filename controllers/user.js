@@ -12,12 +12,12 @@ exports.createUser = async function (req, res) {
     const existingUser = await userModel.findOne({ email: newUser.email });
     // console.log(existingUser);
     if (existingUser) {
+      // res.redirect("http://127.0.0.1:5500/frontend/login.html");
       res.status(400).json({ status: false, message: "User already exists!" });
     } else {
       const password = hashPassword(newUser.password);
       newUser.password = password;
       const user = await userModel.create(newUser);
-      console.log(user);
       res
         .status(201)
         .json({ status: true, message: "User Created Successfully" });
@@ -50,7 +50,6 @@ exports.loginUser = async (req, res) => {
 
       console.log("Authentication successful");
       // userDB.token = token;
-      console.log(userDB);
       return res
         .status(200)
         .json({ status: true, message: "Login successful", token });
@@ -65,6 +64,7 @@ exports.loginUser = async (req, res) => {
   }
 };
 
+// Getting a user
 exports.getUser = async (req, res) => {
   const token = req.headers.authorization;
 
@@ -92,38 +92,3 @@ exports.getUser = async (req, res) => {
     res.status(401).json({ status: false, message: "Invalid token" });
   }
 };
-
-// exports.authMiddleware = (req, res, next) => {
-//   const token = req.headers.authorization;
-
-//   try {
-//     const decoded = jwt.verify(token, secretKey);
-//     console.log(decoded);
-
-//     res.locals.id = decoded.id;
-//     next();
-//   } catch (err) {
-//     console.log(err);
-//     res.status(401).json({ status: false, message: "Invalid token" });
-//   }
-// };
-
-// exports.getUser2 = async (req, res) => {
-//   const id = res.locals.id;
-//   console.log(id);
-
-//   // get the user
-//   const userData = await userModel.findById(id);
-//   console.log(userData);
-
-//   if (userData) {
-//     delete userData.password;
-//     res.status(200).json({
-//       status: "Success",
-//       data: userData,
-//       message: "User data retrived",
-//     });
-//   } else {
-//     res.status(404).json({ status: false, message: "Wrong token" });
-//   }
-// };
