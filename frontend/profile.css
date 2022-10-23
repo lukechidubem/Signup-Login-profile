@@ -1,0 +1,75 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("https://image.shutterstock.com/image-photo/old-brick-black-color-wall-260nw-1605128917.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 110vh;
+  overflow: hidden;
+  color: white;
+}
+
+body h1 {
+  margin-left: 30px;
+}
+
+nav {
+  width: 100%;
+  background-color: black;
+  height: 80px;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.5);
+  margin-bottom: 40px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 70px;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.container .profile-pic img {
+  width: 650px;
+}
+
+.profile-details {
+  margin-left: 40px;
+  background-color: rgb(87, 95, 95);
+  width: 400px;
+  border-bottom-left-radius: 80px;
+  border-top-right-radius: 80px;
+  padding: 30px;
+  opacity: 0.9;
+}
+
+.profile-details div {
+  margin: 40px 0;
+}
+
+.profile-details div h3 {
+  font-size: 30px;
+}
+
+.profile-details div p {
+  font-size: 25px;
+}

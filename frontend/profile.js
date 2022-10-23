@@ -5,6 +5,7 @@ const email = document.querySelector(".email");
 const name = document.querySelector(".name");
 const phone = document.querySelector(".phone");
 const welcomeName = document.querySelector(".welcome-name");
+const logout = document.querySelector(".logout");
 
 async function getUser() {
   try {
@@ -26,3 +27,23 @@ async function getUser() {
 }
 
 getUser();
+
+function logoutHandler(e) {
+  e.preventDefault();
+  email.textContent = "";
+  name.textContent = "";
+  welcomeName.textContent = "";
+  phone.textContent = "";
+
+  localStorage.removeItem("token");
+
+  setTimeout(() => {
+    window.location = "login.html";
+  }, 2000);
+
+  setTimeout(() => {
+    window.location = "../index.html";
+  }, 2000);
+}
+
+logout.addEventListener("click", logoutHandler);

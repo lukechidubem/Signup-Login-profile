@@ -50,4 +50,4 @@ const handleSignup = async (e) => {
   }
 };
 
-// signupForm.addEventListener("submit", handleSignup);
+signupForm.addEventListener("submit", handleSignup);
